@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Full-width fix ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar hide utility (for capability overview) ───────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Responsive page padding utility ────────────────────────────── */
+/* Use .page-x instead of page-x in all pages/components */
+.page-x {
+  padding-left: 1rem;    /* mobile: 16px */
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-x {
+    padding-left: 2rem;  /* sm: 32px */
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-x {
+    padding-left: 3rem;  /* md: 48px */
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-x {
+    padding-left: 4rem;  /* lg: 64px — same as page-x */
+    padding-right: 4rem;
+  }
+}
