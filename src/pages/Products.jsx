@@ -39,7 +39,7 @@ function Hero() {
             <img
               src={productsHero}
               alt="Egyptian textile fabrics"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-bottom"
             />
           </div>
 
@@ -131,15 +131,15 @@ function CapabilityOverview() {
           Capability Overview
         </h2>
 
-        {/* Horizontal scroll on mobile/tablet, grid on large screens */}
-        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0">
+        {/* Vertical stack on mobile/tablet, grid on large screens */}
+        <div className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-5 lg:gap-5">
           {capabilities.map((cap) => (
             <div
               key={cap.title}
-              className="shrink-0 w-[200px] lg:w-auto snap-start flex flex-col group"
+              className="flex flex-col group w-full sm:w-[90%] mx-auto lg:w-auto"
             >
               {/* Image */}
-              <div className="h-[180px] overflow-hidden rounded-lg bg-bg-muted mb-4 border border-border-default/30">
+              <div className="h-[180px] sm:h-[220px] overflow-hidden rounded-lg bg-bg-muted mb-4 border border-border-default/30">
                 <img
                   src={cap.image}
                   alt={cap.title}
@@ -148,12 +148,14 @@ function CapabilityOverview() {
               </div>
               {/* Text */}
               <h3
-                className="text-text-primary text-sm font-semibold mb-1.5 leading-snug"
+                className="text-text-primary text-sm font-semibold mb-1.5 leading-snug text-center sm:text-left"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 {cap.title}
               </h3>
-              <p className="text-text-muted text-xs leading-relaxed">{cap.description}</p>
+              <p className="text-text-muted text-xs leading-relaxed text-center sm:text-left">
+                {cap.description}
+              </p>
             </div>
           ))}
         </div>
@@ -161,6 +163,47 @@ function CapabilityOverview() {
     </section>
   );
 }
+
+//   return (
+//     <section className="w-full py-20 bg-white">
+//       <div className="w-full max-w-[1440px] mx-auto page-x">
+//         <h2
+//           className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary mb-12"
+//           style={{ fontFamily: 'Playfair Display, serif' }}
+//         >
+//           Capability Overview
+//         </h2>
+
+//         {/* Horizontal scroll on mobile/tablet, grid on large screens */}
+//         <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0">
+//           {capabilities.map((cap) => (
+//             <div
+//               key={cap.title}
+//               className="shrink-0 w-[200px] lg:w-auto snap-start flex flex-col group"
+//             >
+//               {/* Image */}
+//               <div className="h-[180px] overflow-hidden rounded-lg bg-bg-muted mb-4 border border-border-default/30">
+//                 <img
+//                   src={cap.image}
+//                   alt={cap.title}
+//                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+//                 />
+//               </div>
+//               {/* Text */}
+//               <h3
+//                 className="text-text-primary text-sm font-semibold mb-1.5 leading-snug"
+//                 style={{ fontFamily: 'Playfair Display, serif' }}
+//               >
+//                 {cap.title}
+//               </h3>
+//               <p className="text-text-muted text-xs leading-relaxed">{cap.description}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 // ─── Superior Inputs & Materials ─────────────────────────────────────────────
 const materials = [

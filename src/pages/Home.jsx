@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { Boat, Tag, Buildings, SquaresFour, ArrowLeft, ArrowRight } from '@phosphor-icons/react';
 import heroBg from '../assets/hero-bg.png';
@@ -12,27 +12,30 @@ import CTABanner from '../components/ui/CTABanner';
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative w-full min-h-[480px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="Al-Mahalla Al-Kubra" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/55" />
+        <img src={heroBg} alt="Al-Mahalla Al-Kubra" className="w-full h-full object-cover object-center sm:object-top" />
+        <div className="absolute inset-0 bg-black/55 sm:bg-black/50 md:bg-black/55" />
       </div>
-      <div className="relative z-10 text-center px-4 sm:px-8 max-w-[800px] mx-auto py-24">
+      <div className="relative z-10 text-center px-4 sm:px-8 mx-auto py-24">
         <h1
-          className="text-[42px] md:text-[56px] font-semibold leading-tight text-white mb-5"
+          className="text-[42px] md:text-[46px] font-semibold leading-tight text-white mt-15 mb-5 w-full"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
-          End-To-End Textile Sourcing<br />From Egypt
+          End-To-End Textile Sourcing From Egypt
         </h1>
-        <p className="text-white/80 text-base md:text-lg mb-10 leading-relaxed">
-          Rooted in Egypt's Ancient Textile Capital.<br />Serving Global Markets.
+        <p 
+          className="text-white text-base md:text-[24px] mb-5 leading-relaxed"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          Rooted in Egypt's Ancient Textile Capital <br /> Serving Global Markets
         </p>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 bg-brand-primary text-text-primary font-medium px-8 py-3.5 hover:bg-brand-secondary transition-colors duration-200 text-sm"
+          className="inline-flex items-center gap-2 bg-brand-primary text-text-primary md:text-[16px] font-medium px-8 py-3.5 hover:bg-brand-secondary transition-colors duration-200 text-sm"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
-          Find Out From Experts
+          Chat with our Expert
         </Link>
       </div>
     </section>
@@ -42,7 +45,7 @@ function Hero() {
 // ─── Representation (inlined from external file) ─────────────────────────────
 function Representation() {
   return (
-    <section className="w-full relative overflow-hidden border-y border-brand-primary/20 py-16">
+    <section className="w-full relative overflow-hidden py-16">
       {/* ── Fabric texture background ── */}
       <div className="absolute inset-0 z-0">
         <img src={fabricTexture} alt="" aria-hidden className="w-full h-full object-cover" />
@@ -53,29 +56,30 @@ function Representation() {
       {/* ── 4 logos — one centered on each rectangle side ── */}
       {/* Top center */}
       <img src={logoIcon} alt="" aria-hidden
-        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[40%] h-14 opacity-25 pointer-events-none select-none z-10"
-        style={{ transform: 'rotate(180deg)' }} />
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[5%] h-14 opacity-25 rotate-180 pointer-events-none select-none z-10"
+      />
       {/* Bottom center */}
       <img src={logoIcon} alt="" aria-hidden
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[40%] h-14 opacity-25 pointer-events-none select-none z-10"
-        style={{ transform: 'rotate(0deg)' }} />
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[-5%] h-14 opacity-25 rotate-0 pointer-events-none select-none z-10"
+      />
       {/* Left center — rotated so it faces inward */}
       <img src={logoIcon} alt="" aria-hidden
-        className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-[40%] h-14 opacity-25 pointer-events-none select-none z-10"
-        style={{ transform: 'rotate(90deg)' }} />
+        className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-[25%] h-14 opacity-25 rotate-90 pointer-events-none select-none z-10"
+      />
       {/* Right center */}
       <img src={logoIcon} alt="" aria-hidden
-        className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[40%] h-14 opacity-25 pointer-events-none select-none z-10"
-        style={{ transform: 'rotate(270deg)' }} />
+        className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[25%] h-14 opacity-25 -rotate-90 pointer-events-none select-none z-10"
+      />
 
       {/* ── Content ── */}
-      <div className="relative z-20 w-full max-w-[1440px] mx-auto page-x">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-20 w-full max-w-[1400px] mx-auto page-x p-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
+          
 
           {/* Left: text */}
           <div>
             <h2
-              className="text-[28px] md:text-[34px] font-semibold text-text-primary mb-7 leading-tight"
+              className="text-[28px] md:text-[32px] font-semibold text-text-primary mb-7 leading-tight"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Your On-The-Ground Representation In Egypt
@@ -86,7 +90,7 @@ function Representation() {
                 'We Maintain A Buyer-Focused Commercial Presence In Germany',
                 "This Means We're Right Where Production Happens And Always Available Where You Make Decisions.",
               ].map((point, i) => (
-                <li key={i} className="flex items-start gap-3 text-text-secondary text-sm leading-relaxed">
+                <li key={i} className="flex items-start gap-3 text-text-secondary text-sm leading-tight">
                   <span className="w-1.5 h-1.5 rounded-full bg-text-secondary shrink-0 mt-2" />
                   {point}
                 </li>
@@ -99,7 +103,7 @@ function Representation() {
             <img
               src={worldMap}
               alt="World map showing Egypt and Germany locations"
-              className="w-full max-w-[520px] object-contain"
+              className="w-full max-w-[520px] h-[80%] object-contain"
               style={{ opacity: 0.88 }}
             />
           </div>
@@ -234,7 +238,22 @@ const operations = [
 
 function HowWeOperate() {
   const [current, setCurrent] = useState(0);
-  const visibleCount = 3;
+  const [visibleCount, setVisibleCount] = useState(3);
+  useEffect(() => {
+  const updateVisible = () => {
+    if (window.innerWidth < 640) {
+      setVisibleCount(1); // mobile
+    } else if (window.innerWidth < 1024) {
+      setVisibleCount(2); // tablet
+    } else {
+      setVisibleCount(3); // desktop
+    }
+  };
+
+  updateVisible();
+  window.addEventListener("resize", updateVisible);
+  return () => window.removeEventListener("resize", updateVisible);
+}, []);
   const maxIndex = operations.length - visibleCount;
   const prev = () => setCurrent((c) => Math.max(c - 1, 0));
   const next = () => setCurrent((c) => Math.min(c + 1, maxIndex));
@@ -294,7 +313,7 @@ function HowWeOperate() {
               <div key={op.number} className="shrink-0 flex items-stretch"
                 style={{ width: `calc(100% / ${visibleCount})`, paddingRight: idx < operations.length - 1 ? '0' : '0' }}>
                 {/* Card */}
-                <div className="flex-1 bg-white rounded-lg mx-2 p-8 flex flex-col gap-4 min-h-[180px]">
+                <div className="flex-1 min-w-0 bg-white rounded-lg mx-2 sm:mx-3 p-8 flex flex-col gap-4 min-h-[180px]">
                   <div className="flex items-center gap-3">
                     <span className="text-brand-primary text-xl font-bold leading-none"
                       style={{ fontFamily: 'Playfair Display, serif' }}>

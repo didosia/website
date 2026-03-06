@@ -48,7 +48,7 @@ function OperatingPosition() {
   return (
     <section
       className="w-full py-20 relative overflow-hidden"
-      style={{ backgroundColor: '#1e2224' }}
+      style={{ backgroundColor: '#1a1f21' }}
     >
       {/* Egyptian side decoration — left edge */}
       <img
@@ -400,7 +400,7 @@ function QualityCompliance() {
       style={{ backgroundImage: `url(${fabricTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <img src={qualityAsset} alt="" aria-hidden className="absolute top-3 right-6 h-20 opacity-60 pointer-events-none select-none" />
-      <img src={logoIcon} alt="" aria-hidden className="absolute top-3 right-6 h-16 opacity-50 pointer-events-none select-none" style={{ transform: 'rotate(-117.26deg)' }} />
+      <img src={logoIcon} alt="" aria-hidden className="absolute top-3 right-0 h-16 opacity-50 pointer-events-none select-none" style={{ transform: 'rotate(-117.26deg)' }} />
       
       <div className="w-full max-w-[1440px] mx-auto page-x relative z-10">
         <h2

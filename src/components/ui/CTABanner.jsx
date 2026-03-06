@@ -13,12 +13,13 @@ export default function CTABanner({
   buttonTo = '/contact',
 }) {
   return (
-    <section className="bg-bg-dark py-20 page-x relative overflow-hidden">
+    <section className="bg-dark py-20 page-x relative overflow-hidden"
+    style={{ backgroundColor: '#1a1f21' }}>
       {/* Decorative wheat icons bottom corners */}
-      <div className="absolute bottom-0 left-6 pointer-events-none select-none" >
+      <div className="absolute bottom-0 left-0 pointer-events-none select-none" >
         <img src={wheatLeft} alt="" className="h-20 object-contain opacity-50" />
       </div>
-      <div className="absolute bottom-0 right-6 pointer-events-none select-none">
+      <div className="absolute bottom-0 right-0 pointer-events-none select-none">
         <img src={wheatRight} alt="" className="h-20 object-contain opacity-50" />
       </div>
 
@@ -34,7 +35,7 @@ export default function CTABanner({
         {/* Outlined gold button — matches Figma */}
         <Link
           to={buttonTo}
-          className="inline-flex items-center justify-center px-8 py-3 border border-brand-primary text-brand-primary text-sm font-medium hover:bg-brand-primary hover:text-text-primary transition-colors duration-200"
+          className="inline-flex bg-brand-primary items-center justify-center px-8 py-3 border border-brand-primary text-text-primary text-sm font-medium hover:bg-brand-primary hover:bg-brand-secondary transition-colors duration-200"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           {buttonText}

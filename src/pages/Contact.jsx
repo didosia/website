@@ -36,12 +36,12 @@ function Hero() {
 // ─── Contact Info Strip ───────────────────────────────────────────────────────
 function ContactStrip() {
   return (
-    <section className="w-full bg-bg-dark py-8 relative overflow-hidden">
+    <section className="w-full bg-bg-dark py-8 relative overflow-hidden" style={{ backgroundColor: '#1a1f21' }}>
       {/* Wheat decoration — bottom left and right */}
       <img src={logoIcon} alt="" aria-hidden
-        className="absolute bottom-0 left-4 h-14 opacity-25 pointer-events-none select-none" />
+        className="absolute bottom-0 left-4 h-14 opacity-50 pointer-events-none select-none"/>
       <img src={logoIcon} alt="" aria-hidden
-        className="absolute bottom-0 right-4 h-14 opacity-25 pointer-events-none select-none scale-x-[-1]" />
+        className="absolute bottom-0 right-4 h-14 opacity-50 pointer-events-none select-none scale-x-[-1]" />
 
       <div className="w-full max-w-[1440px] mx-auto page-x relative z-10">
         {/* Email centered */}
