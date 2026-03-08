@@ -12,27 +12,27 @@ import CTABanner from '../components/ui/CTABanner';
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[467px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="Al-Mahalla Al-Kubra" className="w-full h-full object-cover object-center sm:object-top" />
         <div className="absolute inset-0 bg-black/55 sm:bg-black/50 md:bg-black/55" />
       </div>
-      <div className="relative z-10 text-center px-4 sm:px-8 mx-auto py-24">
+      <div className="relative z-10 text-center mx-auto" style={{ paddingTop: '60px', paddingRight: '104px', paddingBottom: '60px', paddingLeft: '104px' }}>
         <h1
-          className="text-[42px] md:text-[46px] font-semibold leading-tight text-white mt-15 mb-5 w-full"
-          style={{ fontFamily: 'Playfair Display, serif' }}
+          className="text-[42px] md:text-[46px] font-semibold leading-tight text-white w-full"
+          style={{ fontFamily: 'Playfair Display, serif', marginBottom: '48px' }}
         >
           End-To-End Textile Sourcing From Egypt
         </h1>
         <p 
-          className="text-white text-base md:text-[24px] mb-5 leading-relaxed"
-          style={{ fontFamily: 'Playfair Display, serif' }}
+          className="text-white text-base md:text-[18px] leading-relaxed"
+          style={{ fontFamily: 'Playfair Display, serif', marginBottom: '48px' }}
         >
           Rooted in Egypt's Ancient Textile Capital <br /> Serving Global Markets
         </p>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 bg-brand-primary text-text-primary md:text-[16px] font-medium px-8 py-3.5 hover:bg-brand-secondary transition-colors duration-200 text-sm"
+          className="inline-flex items-center gap-2 bg-brand-primary text-text-primary text-sm md:text-[14px] font-medium px-6 md:px-8 py-3 hover:bg-brand-secondary transition-colors duration-200"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           Chat with our Expert
@@ -45,7 +45,7 @@ function Hero() {
 // ─── Representation (inlined from external file) ─────────────────────────────
 function Representation() {
   return (
-    <section className="w-full relative overflow-hidden py-16">
+    <section className="w-full relative overflow-hidden" style={{ height: '430.8251953125px', paddingTop: '60px', paddingRight: '16px', paddingBottom: '60px', paddingLeft: '16px' }}>
       {/* ── Fabric texture background ── */}
       <div className="absolute inset-0 z-0">
         <img src={fabricTexture} alt="" aria-hidden className="w-full h-full object-cover" />
@@ -72,26 +72,26 @@ function Representation() {
       />
 
       {/* ── Content ── */}
-      <div className="relative z-20 w-full max-w-[1400px] mx-auto page-x p-5">
-        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
+      <div className="relative z-20 w-full max-w-[1440px] mx-auto" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] items-center" style={{ gap: '32px', height: '100%' }}>
           
 
           {/* Left: text */}
           <div>
             <h2
-              className="text-[28px] md:text-[32px] font-semibold text-text-primary mb-7 leading-tight"
-              style={{ fontFamily: 'Playfair Display, serif' }}
+              className="text-[28px] md:text-[32px] font-semibold text-text-primary leading-tight"
+              style={{ fontFamily: 'Playfair Display, serif', marginBottom: '32px' }}
             >
               Your On-The-Ground Representation In Egypt
             </h2>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col" style={{ gap: '32px' }}>
               {[
                 "Our Operational Home Is In Al-Mahalla El-Kubra, Egypt's Thriving Textile Manufacturing Hub",
                 'We Maintain A Buyer-Focused Commercial Presence In Germany',
                 "This Means We're Right Where Production Happens And Always Available Where You Make Decisions.",
               ].map((point, i) => (
-                <li key={i} className="flex items-start gap-3 text-text-secondary text-sm leading-tight">
-                  <span className="w-1.5 h-1.5 rounded-full bg-text-secondary shrink-0 mt-2" />
+                <li key={i} className="flex items-start gap-3 text-text-secondary text-sm leading-relaxed">
+                  <span className="w-2 h-2 rounded-full bg-text-secondary shrink-0 mt-1.5" />
                   {point}
                 </li>
               ))}
@@ -99,11 +99,11 @@ function Representation() {
           </div>
 
           {/* Right: transparent world map blending into fabric bg */}
-          <div className="flex items-center justify-center lg:justify-end">
+          <div className="flex items-center justify-center lg:justify-end h-full">
             <img
               src={worldMap}
               alt="World map showing Egypt and Germany locations"
-              className="w-full max-w-[520px] h-[80%] object-contain"
+              className="w-full max-w-[420px] lg:max-w-[520px] h-full object-contain"
               style={{ opacity: 0.88 }}
             />
           </div>
@@ -132,27 +132,27 @@ const whyUs = [
 
 function WhyUs() {
   return (
-    <section className="w-full py-16 bg-white">
-      <div className="w-full max-w-[1440px] mx-auto page-x">
-        <div className="text-center mb-10">
+    <section className="w-full bg-white border-b border-border-default/30" style={{ height: '324px', paddingTop: '32px', paddingRight: '16px', paddingBottom: '32px', paddingLeft: '16px', display: 'flex', flexDirection: 'column' }}>
+      <div className="w-full max-w-[1440px] mx-auto" style={{ display: 'flex', flexDirection: 'column', height: '100%', gap: '32px' }}>
+        <div className="text-center">
           <h2
             className="text-[32px] md:text-[36px] font-semibold text-text-primary mb-3"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             Why Buyers Love Working With DIDOSIA
           </h2>
-          <p className="text-text-secondary text-sm">
+          <p className="text-text-secondary text-sm md:text-base leading-relaxed">
             DIDOSIA Was Created To Solve The Three Biggest Challenges Buyers Face When Sourcing From Egypt.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {whyUs.map((item) => (
             <div
               key={item.title}
-              className="rounded-lg border border-border-default/60 p-7 hover:border-brand-primary/40 transition-colors duration-200"
+              className="rounded-lg border border-border-default/50 p-6 md:p-8 hover:border-brand-primary/40 transition-colors duration-200"
             >
               <h3
-                className="text-text-primary text-base font-semibold mb-3"
+                className="text-text-primary text-base md:text-lg font-semibold mb-4"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 {item.title}
@@ -168,31 +168,31 @@ function WhyUs() {
 
 // ─── Our Clients ──────────────────────────────────────────────────────────────
 const clientTypes = [
-  { icon: <Boat size={48} weight="light" />,        label: 'Importers & Distributors.' },
-  { icon: <Tag size={48} weight="light" />,          label: 'Retail & Private-Label Brands' },
-  { icon: <Buildings size={48} weight="light" />,   label: 'Hospitality & Contract Buyers' },
-  { icon: <SquaresFour size={48} weight="light" />, label: 'Wholesalers & Procurers' },
+  { icon: <Boat size={44} weight="light" />,        label: 'Importers & Distributors.' },
+  { icon: <Tag size={44} weight="light" />,          label: 'Retail & Private-Label Brands' },
+  { icon: <Buildings size={44} weight="light" />,   label: 'Hospitality & Contract Buyers' },
+  { icon: <SquaresFour size={44} weight="light" />, label: 'Wholesalers & Procurers' },
 ];
 
 function OurClients() {
   return (
-    <section className="w-full py-16 bg-white border-t border-border-default/30">
-      <div className="w-full max-w-[1440px] mx-auto page-x">
+    <section className="w-full bg-white" style={{ height: '306px', paddingTop: '32px', paddingRight: '16px', paddingBottom: '32px', paddingLeft: '16px', display: 'flex', flexDirection: 'column' }}>
+      <div className="w-full max-w-[1440px] mx-auto" style={{ display: 'flex', flexDirection: 'column', height: '100%', gap: '32px' }}>
         <h2
-          className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary mb-12"
+          className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           Our Clients
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
           {clientTypes.map((client) => (
             <div
               key={client.label}
-              className="rounded-lg border border-border-default/60 flex flex-col items-center justify-center gap-4 py-10 px-5 hover:border-brand-primary/40 hover:bg-bg-muted/20 transition-colors duration-200 text-center"
+              className="rounded-lg border border-border-default/40 flex flex-col items-center justify-center gap-4 py-8 md:py-10 px-4 md:px-6 hover:border-brand-primary/60 hover:shadow-sm transition-all duration-200 text-center"
             >
-              <span className="text-text-secondary">{client.icon}</span>
+              <span className="text-text-secondary text-5xl md:text-6xl">{client.icon}</span>
               <p
-                className="text-text-primary text-sm font-semibold leading-snug"
+                className="text-text-primary text-xs md:text-sm font-medium leading-snug"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 {client.label}
@@ -239,29 +239,47 @@ const operations = [
 function HowWeOperate() {
   const [current, setCurrent] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  
   useEffect(() => {
-  const updateVisible = () => {
-    if (window.innerWidth < 640) {
-      setVisibleCount(1); // mobile
-    } else if (window.innerWidth < 1024) {
-      setVisibleCount(2); // tablet
-    } else {
-      setVisibleCount(3); // desktop
-    }
-  };
+    const updateVisible = () => {
+      if (window.innerWidth < 640) {
+        setVisibleCount(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(3);
+      }
+    };
 
-  updateVisible();
-  window.addEventListener("resize", updateVisible);
-  return () => window.removeEventListener("resize", updateVisible);
-}, []);
+    updateVisible();
+    window.addEventListener("resize", updateVisible);
+    return () => window.removeEventListener("resize", updateVisible);
+  }, []);
+  
   const maxIndex = operations.length - visibleCount;
   const prev = () => setCurrent((c) => Math.max(c - 1, 0));
   const next = () => setCurrent((c) => Math.min(c + 1, maxIndex));
+  
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchEnd = (e) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    if (touchStart - e.changedTouches[0].clientX > 50) {
+      next();
+    }
+    if (e.changedTouches[0].clientX - touchStart > 50) {
+      prev();
+    }
+  };
 
   return (
     <section
       className="w-full relative overflow-hidden"
-      style={{ backgroundColor: '#1a1f21' }}
+      style={{ height: '337px', paddingTop: '60px', paddingRight: '64px', paddingBottom: '60px', paddingLeft: '64px', backgroundColor: '#1a1f21', display: 'flex', flexDirection: 'column', gap: '32px' }}
     >
       {/* layout asset */}
       <img
@@ -279,17 +297,17 @@ function HowWeOperate() {
       />
 
       {/* ── Content ── */}
-      <div className="w-full max-w-[1440px] mx-auto page-x relative z-10 pt-10 pb-8">
+      <div className="w-full max-w-[1440px] mx-auto relative z-10" style={{ display: 'flex', flexDirection: 'column', height: '100%', gap: '32px' }}>
 
         {/* Header row: title left, arrows right */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-4">
           <h2
-            className="text-[26px] md:text-[34px] font-semibold text-white leading-snug"
+            className="text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-white leading-tight flex-1"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             How We Keep Everything Running Smoothly
           </h2>
-          <div className="flex items-center gap-3 shrink-0 ml-6">
+          <div className="flex items-center gap-3 shrink-0">
             <button onClick={prev} disabled={current === 0}
               className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:border-brand-primary hover:text-brand-primary transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Previous">
@@ -303,46 +321,49 @@ function HowWeOperate() {
           </div>
         </div>
 
-        {/* Cards — full section height, dashed connectors between */}
-        <div className="overflow-hidden">
+        {/* Cards — carousel with touch support */}
+        <div className="flex-1" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} style={{ display: 'flex', alignItems: 'center' }}>
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCount} + 5px / ${visibleCount})))` }}
+            style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCount} + 24px / ${visibleCount})))`, width: '100%', height: '147px' }}
           >
             {operations.map((op, idx) => (
-              <div key={op.number} className="shrink-0 flex items-stretch"
-                style={{ width: `calc(100% / ${visibleCount})`, paddingRight: idx < operations.length - 1 ? '0' : '0' }}>
+              <div key={op.number} className="shrink-0"
+                style={{ width: '396px', marginRight: idx < operations.length - 1 ? '24px' : '0' }}>
                 {/* Card */}
-                <div className="flex-1 min-w-0 bg-white rounded-lg mx-2 sm:mx-3 p-8 flex flex-col gap-4 min-h-[180px]">
-                  <div className="flex items-center gap-3">
-                    <span className="text-brand-primary text-xl font-bold leading-none"
+                <div 
+                  className="bg-white rounded-lg flex flex-col"
+                  style={{
+                    width: '396px',
+                    padding: '24px 32px',
+                    gap: '16px',
+                    borderRadius: '8px',
+                    border: '1px solid #e5e5e5'
+                  }}
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-brand-primary text-2xl font-semibold leading-none shrink-0"
                       style={{ fontFamily: 'Playfair Display, serif' }}>
                       {op.number}
                     </span>
-                    <h3 className="text-text-primary text-base font-semibold leading-snug"
+                    <h3 className="text-text-primary text-base md:text-lg font-semibold leading-snug"
                       style={{ fontFamily: 'Playfair Display, serif' }}>
                       {op.title}
                     </h3>
                   </div>
                   <p className="text-text-secondary text-sm leading-relaxed">{op.description}</p>
                 </div>
-                {/* Dashed connector between cards */}
-                {idx < operations.length - 1 && (
-                  <div className="flex items-center shrink-0 w-4">
-                    <div className="w-full border-t border-dashed border-brand-primary/40" />
-                  </div>
-                )}
               </div>
             ))}
           </div>
         </div>
 
         {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2">
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button key={i} onClick={() => setCurrent(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === current ? 'w-6 bg-brand-primary' : 'w-1.5 bg-white/30'
+              className={`rounded-full transition-all duration-300 ${
+                i === current ? 'w-8 h-2 bg-brand-primary' : 'w-2 h-2 bg-white/30'
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -376,43 +397,29 @@ const qualityPoints = [
 function QualityDistinction() {
   return (
     <section className="w-full py-20 bg-white">
-      <div className="w-full max-w-[1440px] mx-auto page-x">
+      <div className="w-full max-w-[1440px] mx-auto px-4">
         <h2
-          className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary mb-14"
+          className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary mb-16"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           The Distinction Of Quality
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left: image — no border box */}
-          <div className="rounded-sm overflow-hidden bg-bg-muted h-[420px] lg:h-[500px]">
-            <img
-              src={qualityImage}
-              alt="Quality textile measurement"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Right: quality points with ✦ icon */}
-          <div className="flex flex-col gap-8">
-            {qualityPoints.map((point) => (
-              <div key={point.title}>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-brand-primary text-sm">✦</span>
-                  <h4
-                    className="text-text-primary font-semibold text-base"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {point.title}
-                  </h4>
-                </div>
-                <p className="text-text-secondary text-sm leading-relaxed pl-5">
-                  {point.description}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col gap-12 max-w-2xl mx-auto">
+          {qualityPoints.map((point) => (
+            <div key={point.title} className="text-center">
+              <h4
+                className="text-text-primary font-semibold text-lg mb-4 flex items-center justify-center gap-2"
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                <span className="text-brand-primary text-lg">✦</span>
+                {point.title}
+              </h4>
+              <p className="text-text-secondary text-sm leading-relaxed">
+                {point.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -422,7 +429,7 @@ function QualityDistinction() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full flex flex-col gap-6">
       <Hero />
       <Representation />
       <WhyUs />
