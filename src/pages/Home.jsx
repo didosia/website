@@ -8,6 +8,7 @@ import worldMap from '../assets/world-map.png';
 import fabricTexture from '../assets/fabric-texture.jpg';
 import qualityImage from '../assets/Screenshot 2026-02-26 041425.png';
 import CTABanner from '../components/ui/CTABanner';
+import Vector from '../assets/Vector.png';
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -15,25 +16,42 @@ function Hero() {
     <section className="relative w-full h-[467px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="Al-Mahalla Al-Kubra" className="w-full h-full object-cover object-center sm:object-top" />
-        <div className="absolute inset-0 bg-black/55 sm:bg-black/50 md:bg-black/55" />
+        <div className="absolute inset-0 " />
       </div>
       <div className="relative z-10 text-center mx-auto" style={{ paddingTop: '60px', paddingRight: '104px', paddingBottom: '60px', paddingLeft: '104px' }}>
         <h1
-          className="text-[42px] md:text-[46px] font-semibold leading-tight text-white w-full"
-          style={{ fontFamily: 'Playfair Display, serif', marginBottom: '48px' }}
+          className="text-[42px] md:text-[46px] font-bold leading-tight text-white w-full"
+          style={{ fontFamily: 'Playfair Display, serif', marginBottom: '24px', fontWeight: 700 }}
         >
           End-To-End Textile Sourcing From Egypt
         </h1>
         <p 
-          className="text-white text-base md:text-[18px] leading-relaxed"
-          style={{ fontFamily: 'Playfair Display, serif', marginBottom: '48px' }}
+          className="text-white text-center w-full"
+          style={{ 
+            fontFamily: 'Playfair Display, serif', 
+            fontWeight: 400,
+            fontSize: '24px',
+            lineHeight: '31px',
+            letterSpacing: '0%',
+            marginBottom: '24px'
+          }}
         >
           Rooted in Egypt's Ancient Textile Capital <br /> Serving Global Markets
         </p>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 bg-brand-primary text-text-primary text-sm md:text-[14px] font-medium px-6 md:px-8 py-3 hover:bg-brand-secondary transition-colors duration-200"
-          style={{ fontFamily: 'Playfair Display, serif' }}
+          className="inline-flex items-center justify-center gap-4 bg-brand-primary text-text-primary hover:bg-brand-secondary transition-colors duration-200"
+          style={{ 
+            fontFamily: 'Playfair Display, serif',
+            fontWeight: 500,
+            fontSize: '16px',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            width: '200px',
+            height: '52px',
+            gap: '16px',
+            opacity: 1
+          }}
         >
           Chat with our Expert
         </Link>
@@ -78,19 +96,30 @@ function Representation() {
 
           {/* Left: text */}
           <div>
-            <h2
-              className="text-[28px] md:text-[32px] font-semibold text-text-primary leading-tight"
-              style={{ fontFamily: 'Playfair Display, serif', marginBottom: '32px' }}
-            >
-              Your On-The-Ground Representation In Egypt
-            </h2>
-            <ul className="flex flex-col" style={{ gap: '32px' }}>
+           <h2
+            className="text-text-primary leading-tight"
+            style={{ 
+              fontFamily: 'Playfair Display, serif', 
+              fontWeight: 700,
+              fontSize: '32px',
+              lineHeight: '120%',
+              letterSpacing: '0%',
+              marginBottom: '32px',
+              textTransform: 'capitalize',
+              width: '702px',
+              height: '38px',
+              opacity: 1
+            }}
+          >
+            Your On-The-Ground Representation In Egypt
+          </h2>
+            <ul className="flex flex-col" style={{ gap: '32px', width: '801px', height: '168px', opacity: 1 }}>
               {[
                 "Our Operational Home Is In Al-Mahalla El-Kubra, Egypt's Thriving Textile Manufacturing Hub",
                 'We Maintain A Buyer-Focused Commercial Presence In Germany',
                 "This Means We're Right Where Production Happens And Always Available Where You Make Decisions.",
               ].map((point, i) => (
-                <li key={i} className="flex items-start gap-3 text-text-secondary text-sm leading-relaxed">
+                <li key={i} className="flex items-start gap-3 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '20px', lineHeight: '120%', letterSpacing: '0%', textTransform: 'capitalize', color: '#6B7280' }}>
                   <span className="w-2 h-2 rounded-full bg-text-secondary shrink-0 mt-1.5" />
                   {point}
                 </li>
@@ -141,23 +170,57 @@ function WhyUs() {
           >
             Why Buyers Love Working With DIDOSIA
           </h2>
-          <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-            DIDOSIA Was Created To Solve The Three Biggest Challenges Buyers Face When Sourcing From Egypt.
-          </p>
+          <p 
+          className="text-text-secondary"
+          style={{ 
+            fontFamily: 'Inter, sans-serif',
+            fontWeight: 500,
+            fontSize: '20px',
+            lineHeight: '120%',
+            letterSpacing: '0%',
+            textAlign: 'center',
+            textTransform: 'capitalize',
+            width: '1312px',
+            height: '24px',
+            opacity: 1
+          }}
+        >
+          DIDOSIA Was Created To Solve The Three Biggest Challenges Buyers Face When Sourcing From Egypt.
+        </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {whyUs.map((item) => (
             <div
               key={item.title}
-              className="rounded-lg border border-border-default/50 p-6 md:p-8 hover:border-brand-primary/40 transition-colors duration-200"
+              className="rounded-lg p-6 md:p-8 hover:border-brand-primary/40 transition-colors duration-200"
+              style={{ border: '2px solid #e5e7eb' }}
             >
               <h3
-                className="text-text-primary text-base md:text-lg font-semibold mb-4"
-                style={{ fontFamily: 'Playfair Display, serif' }}
+                className="text-text-primary mb-4"
+                style={{ 
+                  fontFamily: 'Playfair Display, serif',
+                  fontWeight: 700,
+                  fontSize: '24px',
+                  lineHeight: '32px',
+                  letterSpacing: '0%',
+                  textTransform: 'capitalize'
+                }}
               >
                 {item.title}
               </h3>
-              <p className="text-text-secondary text-sm leading-relaxed">{item.description}</p>
+              <p 
+                className="text-text-secondary"
+                style={{ 
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textTransform: 'capitalize'
+                }}
+              >
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
@@ -192,8 +255,15 @@ function OurClients() {
             >
               <span className="text-text-secondary text-5xl md:text-6xl">{client.icon}</span>
               <p
-                className="text-text-primary text-xs md:text-sm font-medium leading-snug"
-                style={{ fontFamily: 'Playfair Display, serif' }}
+                className="text-text-primary"
+                style={{ 
+                  fontFamily: 'Playfair Display, serif',
+                  fontWeight: 700,
+                  fontSize: '24px',
+                  lineHeight: '32px',
+                  letterSpacing: '0%',
+                  textTransform: 'capitalize'
+                }}
               >
                 {client.label}
               </p>
@@ -302,8 +372,15 @@ function HowWeOperate() {
         {/* Header row: title left, arrows right */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-4">
           <h2
-            className="text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-white leading-tight flex-1"
-            style={{ fontFamily: 'Playfair Display, serif' }}
+            className="text-white flex-1"
+            style={{ 
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: 700,
+              fontSize: '32px',
+              lineHeight: '120%',
+              letterSpacing: '0%',
+              textTransform: 'capitalize'
+            }}
           >
             How We Keep Everything Running Smoothly
           </h2>
@@ -346,12 +423,37 @@ function HowWeOperate() {
                       style={{ fontFamily: 'Playfair Display, serif' }}>
                       {op.number}
                     </span>
-                    <h3 className="text-text-primary text-base md:text-lg font-semibold leading-snug"
-                      style={{ fontFamily: 'Playfair Display, serif' }}>
+                    <h3
+                      className="text-text-primary mb-4"
+                      style={{ 
+                        fontFamily: 'Playfair Display, serif',
+                        fontWeight: 700,
+                        fontSize: '24px',
+                        lineHeight: '32px',
+                        letterSpacing: '0%',
+                        textTransform: 'capitalize',
+                        height: '32px'
+                      }}
+                    >
                       {op.title}
                     </h3>
                   </div>
-                  <p className="text-text-secondary text-sm leading-relaxed">{op.description}</p>
+                  <p 
+                    className="text-text-secondary"
+                    style={{ 
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textTransform: 'capitalize',
+                      width: '350px',
+                      height: '38px',
+                      opacity: 1
+                    }}
+                  >
+                    {op.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -405,17 +507,33 @@ function QualityDistinction() {
           The Distinction Of Quality
         </h2>
 
-        <div className="flex flex-col gap-12 max-w-2xl mx-auto">
+        <div className="flex flex-col mx-auto" style={{ width: '518px', height: '396px', gap: '24px' }}>
           {qualityPoints.map((point) => (
             <div key={point.title} className="text-center">
               <h4
-                className="text-text-primary font-semibold text-lg mb-4 flex items-center justify-center gap-2"
-                style={{ fontFamily: 'Playfair Display, serif' }}
+                className="text-text-primary mb-4 flex items-center justify-center gap-2"
+                style={{ 
+                  fontFamily: 'Playfair Display, serif',
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%'
+                }}
               >
-                <span className="text-brand-primary text-lg">✦</span>
+                <img src={Vector} alt="" aria-hidden style={{ width: '20px', height: '20px' }} />
                 {point.title}
               </h4>
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p 
+                className="text-text-secondary"
+                style={{ 
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textTransform: 'capitalize'
+                }}
+              >
                 {point.description}
               </p>
             </div>
@@ -430,6 +548,7 @@ function QualityDistinction() {
 export default function Home() {
   return (
     <main className="w-full flex flex-col gap-6">
+      <div className="h-6" />
       <Hero />
       <Representation />
       <WhyUs />
@@ -437,6 +556,7 @@ export default function Home() {
       <HowWeOperate />
       <QualityDistinction />
       <CTABanner />
+      <div className="h-6" />
     </main>
   );
 }
