@@ -59,15 +59,15 @@ function ContactStrip() {
         </div>
 
         {/* Two office columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-[760px] mx-auto divide-y md:divide-y-0 md:divide-x divide-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-[1140px] mx-auto justify-items-center">
 
           {/* Egypt image */}
-          <div className="px-6 py-2 flex items-center justify-center">
+          <div className="flex items-center justify-center" style={{ opacity: 1, paddingTop: '16px', paddingRight: '24px', paddingBottom: '16px', paddingLeft: '24px', borderRadius: '20px', gap: '16px' }}>
             <img src={egAsset} alt="Egypt office" aria-hidden className="w-full max-w-[420px] object-contain" />
           </div>
 
           {/* Germany image */}
-          <div className="px-6 py-2 flex items-center justify-center">
+          <div className="flex items-center justify-center" style={{ opacity: 1, paddingTop: '16px', paddingRight: '24px', paddingBottom: '16px', paddingLeft: '24px', borderRadius: '20px', gap: '16px' }}>
             <img src={gerAsset} alt="Germany office" aria-hidden className="w-full max-w-[420px] object-contain" />
           </div>
         </div>

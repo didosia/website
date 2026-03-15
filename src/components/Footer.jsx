@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoIcon from '../assets/logo-icon.png';
+import logoIcon from '../assets/icon-nav.png';
 
 const footerLinks = {
   Company: [
@@ -60,12 +60,6 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <Link to="/" className="flex flex-col items-start w-fit">
               <img src={logoIcon} alt="DIDOSIA" className="h-10 object-contain mb-1" />
-              <span
-                className="text-text-primary tracking-[0.28em] text-sm font-bold uppercase"
-                style={{ fontFamily: 'Playfair Display, serif' }}
-              >
-                DIDOSIA
-              </span>
             </Link>
 
             <p className="text-text-secondary text-sm leading-relaxed">
@@ -93,7 +87,7 @@ export default function Footer() {
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading} className="flex flex-col gap-4">
               <h4
-                className="text-text-primary text-base font-semibold"
+                className="text-text-primary text-base font-semibold text-[24px]"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 {heading}
@@ -116,7 +110,7 @@ export default function Footer() {
           {/* Contact Column */}
           <div className="flex flex-col gap-4">
             <h4
-              className="text-text-primary text-base font-semibold"
+              className="text-text-primary text-base font-semibold text-[24px]"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Contact

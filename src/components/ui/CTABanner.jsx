@@ -13,29 +13,29 @@ export default function CTABanner({
   buttonTo = '/contact',
 }) {
   return (
-    <section className="py-16 md:py-20 lg:py-24 page-x px-4 relative overflow-hidden"
+    <section className="bg-dark py-10 page-x relative overflow-hidden h-[252px]"
     style={{ backgroundColor: '#1a1f21' }}>
       {/* Decorative wheat icons bottom corners */}
       <div className="absolute bottom-0 left-0 pointer-events-none select-none" >
-        <img src={wheatLeft} alt="" className="h-24 md:h-28 object-contain opacity-60" />
+        <img src={wheatLeft} alt="" className="h-20 object-contain opacity-80" />
       </div>
       <div className="absolute bottom-0 right-0 pointer-events-none select-none">
-        <img src={wheatRight} alt="" className="h-24 md:h-28 object-contain opacity-60" />
+        <img src={wheatRight} alt="" className="h-20 object-contain opacity-80" />
       </div>
 
       <div className="max-w-[1440px] mx-auto text-center relative z-10">
         <h2
-          className="text-[36px] md:text-[40px] lg:text-[44px] font-semibold text-white mb-4 md:mb-6"
+          className="text-[48px] font-bold text-white mb-4"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           {title}
         </h2>
-        <p className="text-white/70 text-base md:text-[16px] mb-8 md:mb-10 leading-relaxed">{subtitle}</p>
+        <p className="text-white/60 text-base mb-10">{subtitle}</p>
 
         {/* Outlined gold button — matches Figma */}
         <Link
           to={buttonTo}
-          className="inline-flex bg-brand-primary items-center justify-center px-8 md:px-10 py-3 md:py-3.5 text-text-primary text-sm md:text-base font-medium hover:bg-brand-secondary transition-colors duration-200"
+          className=" bg-brand-primary items-center justify-center px-8 py-3 border border-brand-primary text-text-primary text-sm font-medium hover:bg-brand-primary hover:bg-brand-secondary transition-colors duration-200"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           {buttonText}

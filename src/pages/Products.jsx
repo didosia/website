@@ -20,14 +20,14 @@ function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
           {/* Left */}
-          <div>
+          <div className="w-full">
             <h1
-              className="text-[42px] md:text-[50px] font-semibold leading-tight text-text-primary mb-6"
+              className="text-[46px] font-bold leading-tight text-text-primary mb-6"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Textile Categories<br />We Execute With Confidence
             </h1>
-            <p className="text-text-secondary text-base leading-relaxed max-w-[500px]">
+            <p className="text-text-secondary text-base leading-relaxed w-full text-[20px]" style={{ fontFamily: 'Playfair Display, serif' }}>
               DIDOSIA does not offer catalogs or finished SKUs. We operate across core woven textile
               categories where Egypt has proven, repeatable manufacturing strength.
               Our scope reflects capability, not inventory.
@@ -35,7 +35,7 @@ function Hero() {
           </div>
 
           {/* Right: hero image */}
-          <div className="h-[280px] md:h-[320px] overflow-hidden rounded-xl bg-bg-muted">
+          <div className="w-[478px] h-[403px] opacity-100 rounded-[12px] rotate-0 overflow-hidden rounded-xl bg-bg-muted">
             <img
               src={productsHero}
               alt="Egyptian textile fabrics"
@@ -69,7 +69,7 @@ function QualityFramework() {
 
       <div className="w-full max-w-[1440px] mx-auto page-x relative z-10">
         <h2
-          className="text-text-primary text-lg font-semibold mb-6"
+          className="text-text-primary text-lg font-bold mb-6"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           The Quality Framework
@@ -80,8 +80,8 @@ function QualityFramework() {
             'Controlled Execution: Factories We Effectively Oversee And Manage.',
             'Container-Level Success: Reliable Execution For International Buyers.',
           ].map((point, i) => (
-            <li key={i} className="flex items-start gap-3 text-text-secondary text-sm leading-relaxed">
-              <span className="text-brand-primary text-xs shrink-0 mt-0.5">✦</span>
+            <li key={i} className="flex items-start gap-3 leading-relaxed font-medium not-italic text-base leading-[1.2] align-middle capitalize">
+              <span className="shrink-0 mt-0.5" style={{color:"#111827"}}>✦</span>
               {point}
             </li>
           ))}

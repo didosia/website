@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import logoIcon from '../assets/logo-icon.png';
+import logoIcon from '../assets/icon-nav.png';
 
 const navLinks = [
   { label: 'Home',     to: '/',        end: true },
@@ -19,12 +19,6 @@ export default function Navbar() {
         {/* Logo — wheat icon stacked above DIDOSIA text */}
         <Link to="/" className="flex flex-col items-center shrink-0">
           <img src={logoIcon} alt="DIDOSIA" className="h-6 object-contain" />
-          <span
-            className="text-text-primary text-[11px] font-bold tracking-[0.3em] uppercase leading-none mt-0.5"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            DIDOSIA
-          </span>
         </Link>
 
         {/* Desktop nav */}
