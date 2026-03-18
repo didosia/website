@@ -139,8 +139,44 @@ const socials = [
 function FormAndSocial() {
   const [form, setForm] = useState({ fullName: '', company: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMuLOu5G3Ftyr5gSoYR-QQqEtL2R3j6GadE_rw7XPUagwCTZ41IILLYwC2SlSV1T_l/exec";
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // Using URLSearchParams because Google Apps Script doPost(e) handles this format best for free
+    const formData = new URLSearchParams();
+    formData.append("fullName", form.fullName);
+    formData.append("company", form.company);
+    formData.append("email", form.email);
+    formData.append("subject", form.subject);
+    formData.append("message", form.message);
+
+    try {
+      // mode: 'no-cors' allows the request to reach Google without a specialized backend
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString(),
+      });
+
+      // We assume success here as 'no-cors' doesn't allow reading the response body
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Error!", error);
+      alert("Something went wrong. Please try again or email us directly at info@didosia.com");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const inputClass = "w-full border border-border-default/50 px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-brand-primary transition-colors duration-200 bg-white rounded-sm";
 
@@ -195,7 +231,6 @@ function FormAndSocial() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-[760px]">
-                {/* Row 1: Name + Company */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <input type="text" name="fullName" required value={form.fullName} onChange={handleChange} placeholder="Full Name" className={inputClass} />
                   <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company" className={inputClass} />
@@ -207,10 +242,11 @@ function FormAndSocial() {
                 <div className="pt-1">
                   <button
                     type="submit"
-                    className="bg-brand-primary text-text-primary font-medium px-8 py-3 hover:bg-brand-secondary transition-colors duration-200 text-sm"
+                    disabled={loading}
+                    className="bg-brand-primary text-text-primary font-medium px-8 py-3 hover:bg-brand-secondary transition-colors duration-200 text-sm disabled:opacity-50"
                     style={{ fontFamily: 'Playfair Display, serif' }}
                   >
-                    Submit Inquiry
+                    {loading ? "Sending..." : "Submit Inquiry"}
                   </button>
                 </div>
               </form>
@@ -221,7 +257,6 @@ function FormAndSocial() {
     </section>
   );
 }
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Contact() {
   return (
