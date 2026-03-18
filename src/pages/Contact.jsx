@@ -149,8 +149,7 @@ function FormAndSocial() {
     e.preventDefault();
     setLoading(true);
 
-    // Using URLSearchParams because Google Apps Script doPost(e) handles this format best for free
-    const formData = new URLSearchParams();
+    const formData = new FormData();
     formData.append("fullName", form.fullName);
     formData.append("company", form.company);
     formData.append("email", form.email);
@@ -158,17 +157,12 @@ function FormAndSocial() {
     formData.append("message", form.message);
 
     try {
-      // mode: 'no-cors' allows the request to reach Google without a specialized backend
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
+        body: formData,   // ← FormData, no Content-Type header
       });
 
-      // We assume success here as 'no-cors' doesn't allow reading the response body
       setSubmitted(true);
     } catch (error) {
       console.error("Error!", error);
