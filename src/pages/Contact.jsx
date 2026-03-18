@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { LinkedinLogo, FacebookLogo, InstagramLogo } from '@phosphor-icons/react';
 import logoIcon from '../assets/logo-icon.png';
 import contactDeco from '../assets/Group-con.png';
-import egAsset from '../assets/Group-eg.png';
-import gerAsset from '../assets/Group-ger.png';
+import EgFlag from '../assets/Eg-Flag.png';
+import GerFlag from '../assets/Ger-Flag.png';
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -59,17 +59,70 @@ function ContactStrip() {
         </div>
 
         {/* Two office columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-[1140px] mx-auto justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1140px] mx-auto">
 
-          {/* Egypt image */}
-          <div className="flex items-center justify-center" style={{ opacity: 1, paddingTop: '16px', paddingRight: '24px', paddingBottom: '16px', paddingLeft: '24px', borderRadius: '20px', gap: '16px' }}>
-            <img src={egAsset} alt="Egypt office" aria-hidden className="w-full max-w-[420px] object-contain" />
+          {/* Egypt */}
+          <div className="rounded-[20px] bg-[#1a1f21] p-6 flex flex-col gap-4 border border-solid border-[#9A9A92]">
+            {/* Header */}
+            <div className="flex items-center gap-2">
+              <span className="text-xl"><
+                img src={EgFlag} alt="Egypt Flag" />
+              </span>
+              <span
+                className="text-white font-semibold text-[18px]"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                Egypt
+              </span>
+            </div>
+            {/* Phone */}
+            <div className="flex items-center gap-3 text-white/80 text-[14px]" style={{ fontFamily: "Inter, sans-serif" }}>
+              <svg className="shrink-0 text-white/60" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +20 106 040 0903
+            </div>
+            {/* Address */}
+            <div className="flex items-start gap-3 text-white/80 text-[14px]" style={{ fontFamily: "Inter, sans-serif" }}>
+              <svg className="shrink-0 text-white/60 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Al-Mahalla El-Kubra (Part 2) Gharbia Governorate, Egypt
+            </div>
           </div>
 
-          {/* Germany image */}
-          <div className="flex items-center justify-center" style={{ opacity: 1, paddingTop: '16px', paddingRight: '24px', paddingBottom: '16px', paddingLeft: '24px', borderRadius: '20px', gap: '16px' }}>
-            <img src={gerAsset} alt="Germany office" aria-hidden className="w-full max-w-[420px] object-contain" />
+          {/* Germany */}
+          <div className="rounded-[20px] bg-[#1a1f21] p-6 flex flex-col gap-4 border border-solid border border-[#9A9A92]">
+            {/* Header */}
+            <div className="flex items-center gap-2">
+              <span className="text-xl">
+                <img src={GerFlag} alt="Germany Flag" />
+              </span>
+              <span
+                className="text-white font-semibold text-[18px]"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                Germany
+              </span>
+            </div>
+            {/* Phone */}
+            <div className="flex items-center gap-3 text-white/80 text-[14px]" style={{ fontFamily: "Inter, sans-serif" }}>
+              <svg className="shrink-0 text-white/60" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +49 155 681 98104
+            </div>
+            {/* Address */}
+            <div className="flex items-start gap-3 text-white/80 text-[14px]" style={{ fontFamily: "Inter, sans-serif" }}>
+              <svg className="shrink-0 text-white/60 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Frankenbacher Straße 11574078 eilbronn, Germany
+            </div>
           </div>
+
         </div>
       </div>
     </section>

@@ -13,29 +13,30 @@ export default function CTABanner({
   buttonTo = '/contact',
 }) {
   return (
-    <section className="bg-dark py-10 page-x relative overflow-hidden h-[252px]"
-    style={{ backgroundColor: '#1a1f21' }}>
+    <section
+      className="relative overflow-hidden py-10 sm:py-14 md:py-16 px-4 sm:px-8 lg:px-16"
+      style={{ backgroundColor: '#1a1f21' }}
+    >
       {/* Decorative wheat icons bottom corners */}
-      <div className="absolute bottom-0 left-0 pointer-events-none select-none" >
-        <img src={wheatLeft} alt="" className="h-20 object-contain opacity-80" />
+      <div className="absolute bottom-0 left-0 pointer-events-none select-none">
+        <img src={wheatLeft} alt="" className="h-14 sm:h-20 object-contain opacity-80" />
       </div>
       <div className="absolute bottom-0 right-0 pointer-events-none select-none">
-        <img src={wheatRight} alt="" className="h-20 object-contain opacity-80" />
+        <img src={wheatRight} alt="" className="h-14 sm:h-20 object-contain opacity-80" />
       </div>
 
-      <div className="max-w-[1440px] mx-auto text-center relative z-10">
+      <div className="max-w-[1440px] mx-auto text-center relative z-10 flex flex-col items-center gap-4 md:gap-6">
         <h2
-          className="text-[48px] font-bold text-white mb-4"
+          className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-white leading-tight"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           {title}
         </h2>
-        <p className="text-white/60 text-base mb-10">{subtitle}</p>
+        <p className="text-white/60 text-sm sm:text-base">{subtitle}</p>
 
-        {/* Outlined gold button — matches Figma */}
         <Link
           to={buttonTo}
-          className=" bg-brand-primary items-center justify-center px-8 py-3 border border-brand-primary text-text-primary text-sm font-medium hover:bg-brand-primary hover:bg-brand-secondary transition-colors duration-200"
+          className="inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-brand-primary bg-brand-primary text-text-primary text-sm font-medium hover:bg-brand-secondary transition-colors duration-200"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           {buttonText}

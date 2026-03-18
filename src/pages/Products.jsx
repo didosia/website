@@ -6,7 +6,7 @@ import groupPro from '../assets/Group-pro.png';
 
 // Place your images in src/assets/products/
 import productsHero    from '../assets/products/hero.jpg';
-import capBedLinen     from '../assets/products/cap-bed-linen.jpg';
+import capTerryBath     from '../assets/products/cap-bed-linen.jpg';
 import capHomeTextile  from '../assets/products/cap-home-textile.jpg';
 import capWovenFabrics from '../assets/products/cap-woven-fabrics.jpg';
 import capCustom       from '../assets/products/cap-custom-technical.jpg';
@@ -22,12 +22,15 @@ function Hero() {
           {/* Left */}
           <div className="w-full">
             <h1
-              className="text-[46px] font-bold leading-tight text-text-primary mb-6"
+              className="text-[32px] sm:text-[40px] lg:text-[46px] font-bold leading-tight text-text-primary mb-6"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Textile Categories<br />We Execute With Confidence
             </h1>
-            <p className="text-text-secondary text-base leading-relaxed w-full text-[20px]" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <p
+              className="text-text-secondary leading-relaxed w-full text-[16px] sm:text-[18px] lg:text-[20px]"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
               DIDOSIA does not offer catalogs or finished SKUs. We operate across core woven textile
               categories where Egypt has proven, repeatable manufacturing strength.
               Our scope reflects capability, not inventory.
@@ -35,7 +38,7 @@ function Hero() {
           </div>
 
           {/* Right: hero image */}
-          <div className="w-[478px] h-[403px] opacity-100 rounded-[12px] rotate-0 overflow-hidden rounded-xl bg-bg-muted">
+          <div className="w-full h-[280px] sm:h-[340px] lg:h-[403px] overflow-hidden rounded-xl bg-bg-muted">
             <img
               src={productsHero}
               alt="Egyptian textile fabrics"
@@ -94,31 +97,37 @@ function QualityFramework() {
 // ─── Capability Overview ──────────────────────────────────────────────────────
 const capabilities = [
   {
-    title: 'Bed Linen & Bedding Textiles',
+    title: 'Terry & Bath Textiles',
+    description: 'Egypt\'s strongest and most celebrated textile specialty.',
+    image: capTerryBath,
+  },
+  {
+    title: ' Bed Linen & Bedding Textiles',
     description: 'Precision categories where consistency makes all the difference.',
-    image: capBedLinen,
+    image: capHomeTextile,
   },
   {
     title: 'Home & Household Textiles',
     description: 'Comprehensive home textile programs spanning decorative and functional end uses.',
-    image: capHomeTextile,
-  },
-  {
-    title: 'Woven Fabrics (Greige & Finished)',
-    description: 'For buyers sourcing fabric directly from the source.',
     image: capWovenFabrics,
   },
   {
-    title: 'Contract & Technical Textiles',
-    description: 'Specification-driven production for industrial and functional applications.',
+    title: ' Woven Fabrics (Greige & Finished)',
+    description: 'For buyers sourcing fabric directly from the source.',
     image: capCustom,
   },
   {
-    title: 'Garments & CMT Production',
-    description: 'Cut, make, trim production with full inline quality oversight.',
+    title: 'Contract & Custom Textile Programs ',
+    description: 'Specification-driven programs beyond standard categories.',
     image: capGarments,
   },
 ];
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function CapabilityOverview() {
   return (
@@ -126,41 +135,65 @@ function CapabilityOverview() {
       <div className="w-full max-w-[1440px] mx-auto page-x">
         <h2
           className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary mb-12"
-          style={{ fontFamily: 'Playfair Display, serif' }}
+          style={{ fontFamily: "Playfair Display, serif" }}
         >
           Capability Overview
         </h2>
 
-        {/* Vertical stack on mobile/tablet, grid on large screens */}
-        <div className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-5 lg:gap-5">
+        {/* ── Carousel on mobile/tablet, grid on lg+ ── */}
+
+        {/* Mobile/tablet: Swiper */}
+        <div className="lg:hidden">
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={16}
+            breakpoints={{
+              0:   { slidesPerView: 1.2 },
+              480: { slidesPerView: 2.1 },
+              768: { slidesPerView: 3.1 },
+            }}
+            className="!pb-10"
+          >
+            {capabilities.map((cap) => (
+              <SwiperSlide key={cap.title}>
+                <CapabilityCard cap={cap} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Desktop: static 5-column grid */}
+        <div className="hidden lg:grid lg:grid-cols-5 lg:gap-5">
           {capabilities.map((cap) => (
-            <div
-              key={cap.title}
-              className="flex flex-col group w-full sm:w-[90%] mx-auto lg:w-auto"
-            >
-              {/* Image */}
-              <div className="h-[180px] sm:h-[220px] overflow-hidden rounded-lg bg-bg-muted mb-4 border border-border-default/30">
-                <img
-                  src={cap.image}
-                  alt={cap.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              {/* Text */}
-              <h3
-                className="text-text-primary text-sm font-semibold mb-1.5 leading-snug text-center sm:text-left"
-                style={{ fontFamily: 'Playfair Display, serif' }}
-              >
-                {cap.title}
-              </h3>
-              <p className="text-text-muted text-xs leading-relaxed text-center sm:text-left">
-                {cap.description}
-              </p>
-            </div>
+            <CapabilityCard key={cap.title} cap={cap} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function CapabilityCard({ cap }) {
+  return (
+    <div className="flex flex-col group w-full">
+      <div className="h-[180px] sm:h-[220px] overflow-hidden rounded-lg bg-bg-muted mb-4 border border-border-default/30">
+        <img
+          src={cap.image}
+          alt={cap.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+      <h3
+        className="text-text-primary text-sm font-semibold mb-1.5 leading-snug"
+        style={{ fontFamily: "Playfair Display, serif" }}
+      >
+        {cap.title}
+      </h3>
+      <p className="text-text-muted text-xs leading-relaxed">
+        {cap.description}
+      </p>
+    </div>
   );
 }
 

@@ -342,13 +342,13 @@ function QualityCompliance() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {qualityColumns.map((col) => (
-            <div key={col.title} className="bg-white rounded-lg border border-border-default/40 p-8">
-              <h3 className="text-text-primary font-semibold mb-5 text-sm" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <div key={col.title} className="rounded-lg border border-border-default/40 p-8 border border-solid border-[#9A9A92]">
+              <h3 className="text-text-primary font-bold mb-5 text-[20px] " style={{ fontFamily: 'Playfair Display, serif' }}>
                 {col.title}
               </h3>
               <ul className="flex flex-col gap-3">
                 {col.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-text-secondary text-sm leading-relaxed">
+                  <li key={item} className="flex items-start gap-2.5 text-text-secondary text-[16px] leading-relaxed font-inter font-medium not-italic text-base">
                     <span className="text-brand-primary shrink-0 mt-0.5">•</span>
                     {item}
                   </li>
