@@ -197,46 +197,50 @@ function CapabilityCard({ cap }) {
   );
 }
 
-//   return (
-//     <section className="w-full py-20 bg-white">
-//       <div className="w-full max-w-[1440px] mx-auto page-x">
-//         <h2
-//           className="text-center text-[32px] md:text-[36px] font-semibold text-text-primary mb-12"
-//           style={{ fontFamily: 'Playfair Display, serif' }}
-//         >
-//           Capability Overview
-//         </h2>
+// ─── Sample Work & Product Examples ──────────────────────────────────────────
+function SampleWork() {
+  return (
+    <section className="w-full py-12 relative overflow-hidden border-y border-brand-primary/200"
+    style={{ backgroundImage: `url(${fabricTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Decorative asset — right side (full height) */}
+      <img
+        src={groupPro} alt="" aria-hidden
+        className="absolute right-0 top-0 bottom-0 h-full opacity-20 pointer-events-none select-none object-cover"
+      />
+      {/* Bottom center wheat */}
+      <img
+        src={logoIcon} alt="" aria-hidden
+        className="absolute bottom-1 left-1/2 -translate-x-1/2 h-8 opacity-50 pointer-events-none select-none"
+      />
 
-//         {/* Horizontal scroll on mobile/tablet, grid on large screens */}
-//         <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0">
-//           {capabilities.map((cap) => (
-//             <div
-//               key={cap.title}
-//               className="shrink-0 w-[200px] lg:w-auto snap-start flex flex-col group"
-//             >
-//               {/* Image */}
-//               <div className="h-[180px] overflow-hidden rounded-lg bg-bg-muted mb-4 border border-border-default/30">
-//                 <img
-//                   src={cap.image}
-//                   alt={cap.title}
-//                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-//                 />
-//               </div>
-//               {/* Text */}
-//               <h3
-//                 className="text-text-primary text-sm font-semibold mb-1.5 leading-snug"
-//                 style={{ fontFamily: 'Playfair Display, serif' }}
-//               >
-//                 {cap.title}
-//               </h3>
-//               <p className="text-text-muted text-xs leading-relaxed">{cap.description}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
+      <div className="w-full max-w-[1440px] mx-auto page-x flex flex-col items-center text-center">
+        <h2
+          className="text-[32px] md:text-[36px] font-bold text-text-primary mb-4"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          Review our Sample Work & Product Examples
+        </h2>
+        <p
+          className="text-text-secondary text-[16px] sm:text-[18px] leading-relaxed max-w-[600px] mb-10 font-semibold"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          Browse through real product examples and sample outputs that reflect the quality and
+          breadth of what DIDOSIA executes across our textile categories.
+        </p>
+        
+        <a
+          href="https://docs.google.com/document/d/1wVOEdKp2bnPUUMEULwgtWkeRIP8VaJTBsEz3cTm6nio/edit?tab=t.0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-text-primary text-white text-sm font-semibold rounded-lg hover:bg-brand-primary transition-colors duration-200"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          Click Here
+        </a>
+      </div>
+    </section>
+  );
+}
 
 // ─── Superior Inputs & Materials ─────────────────────────────────────────────
 const materials = [
@@ -297,6 +301,7 @@ export default function Products() {
       <Hero />
       <QualityFramework />
       <CapabilityOverview />
+      <SampleWork /> 
       <SuperiorMaterials />
       <CTABanner />
     </main>
